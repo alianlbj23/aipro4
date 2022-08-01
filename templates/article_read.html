@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}文章觀看{% endblock %}
+{% block content %} 
+<style>
+
+</style>
+
+<body class="is-preload">
+    <div id="page-wrapper">
+        {% include "header_mod2.html" %}
+        <section id="main" class="container">
+            <header>
+                <h2>{{ article.Chi_title }}</h2>
+                <h2>{{ article.Eng_title }}</h2>
+                <p>Edit:{{ article.Editor }}</p>
+            </header>
+            <div>
+                <span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+                {%for i in article_format%}
+                <span style="letter-spacing:1vmin">
+                    {{ i }}
+                </span>
+                <br>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+</body>
+{% endblock %}

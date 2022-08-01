@@ -1,0 +1,12 @@
+<div class="menu">
+    <div class="list">
+        <h2 style="margin-bottom:20%">相關文章</h2>
+        <p style="color:#696969">您可能會有興趣的內容</p>
+        {%for article in articles%}
+        <a href="/article_read/0/{{article.pk}}/" class="test"><span><b>{{article.Chi_title}}</b></span><br></a>
+        {% endfor %}
+        {%for ai_articles in articles%}
+        <a href="/article_read/1/{{article.pk}}/" class="test"><span><b>{{article.Chi_title}}</b></span><br></a>
+        {% endfor %}
+    </div>
+</div>

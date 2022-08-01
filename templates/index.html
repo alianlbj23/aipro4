@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} 首頁{% endblock %}
+{% block content %} 
+
+
+<body class="landing is-preload">
+    
+
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        {% include "header.html" %}
+
+        <!-- Banner -->
+            <section id="banner">
+                <h1 class="display-1" style="font-family: 'Noto Sans TC';color:white;font-weight:bold;">數位人文與AI增能學術研究網</h1>
+                <h1 class="display-6" style="font-family: 'Noto Sans TC';color:#E0E0E0">由國立高雄科技大學應用英語系呈現</h1>
+                <ul class="actions special">
+                    {% comment %} <li><a href="#" class="button primary">Sign Up</a></li> {% endcomment %}
+                    <li><a href="#section1" class="button nav-link">關於我們...</a></li>
+                </ul>
+            </section>
+
+        <!-- Main -->
+        
+            <section id="main" class="container">
+                <div id="section1">
+                    <div data-aos="fade-left" data-aos-anchor-placement="top-center">
+                <section class="box special">
+                    <header class="major">
+                        <h1 class="display-3" style="font-family: 'Noto Sans TC', sans-serif;color:black">對於AI增能學術</h1>
+                        
+                        <h3 style="font-family: 'Noto Sans TC', sans-serif;color:gray;">數位人文是一門新興學科，探討數位科技和文化間的交流。<br>學生將學習使用數位科技探索文化、語言或歷史等傳統人文議題，以及分析和理解人文科學相關數據資料...</h4>
+                    </header>
+                    <span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+                </section>
+            </div>
+            </div>
+
+            <div data-aos="fade-right" data-aos-anchor-placement="top-center" >
+                <h1 class="display-4" style="font-family: 'Noto Sans TC', sans-serif;color:#F63E54" >功能介紹</h2>
+                
+                <section class="special features" style="background-color:white;border-radius:5vmin;padding:2vmin">
+                    <div class="row">
+                        <p align="left" style="font-family: 'Noto Sans TC';font-size:3vmin">
+                            <span style="color:#F63E54">由我們團隊為您呈現最佳的體驗。</span><br>
+                            <span style="color:black">使用以下功能解決您的問題或是加入討論，一起成為數位人文的大家庭٩(◦`꒳´◦)۶。</span>
+                        </p>
+                        <section class="col-md-2">
+                            <span class="icon solid major  fa-thin fa-building-columns accent2"></span>
+                            <a href="#"><h3>DH課程</h3></a>
+                        </section>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <section class="col-md-2">
+                            <span class="icon solid major fa-regular fa-code-branch accent3"></span>
+                            <a href="#"><h3>AI增能</h3></a>
+                        </section>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <section class="col-md-2">
+                            <span class="icon solid major fa-regular fa-scroll accent4"></span>
+                            <a href="#"><h3>研究計畫</h3></a>
+                        </section>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <section class="col-md-2">
+                            <span class="icon solid major fa-regular fa-comment accent5"></span>
+                            <a href="#"><h3>討論專區</h3></a>
+                        </section>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <section class="col-md-2">
+                            <span class="icon solid major fa-regular fa-rectangle-list accent6"></span>
+                            <a href="/article_list"><h3>文章列表</h3></a>
+                        </section>
+                        
+                        {% comment %} <section>
+                            <span class="icon solid major fa-regular fa-code-branch accent3"></span>
+                            <h3>AI增能</h3>
+                            <p>...</p>
+                        </section> {% endcomment %}
+                    </div>
+                    {% comment %} <div class="features-row">
+                        <section>
+                            <span class="icon solid major fa-regular fa-scroll accent4"></span>
+                            <h3>研究計畫</h3>
+                            <p>...</p>
+                        </section>
+                        <section>
+                            <span class="icon solid major fa-regular fa-comment accent5"></span>
+                            <h3>討論專區</h3>
+                            <p>...</p>
+                        </section>
+                    </div> {% endcomment %}
+                </section>
+            </div>
+                <br>
+                {% comment %} ----------------------------member card {% endcomment %}
+                <div data-aos="fade-left" data-aos-anchor-placement="top-center">
+                    
+                        <h1 class="display-4" style="font-family: 'Noto Sans TC', sans-serif;color:#0071E3">專業教師開發團隊</h2>
+                            <div style="background-color:white;border-radius:5vmin;padding:2vmin">
+                                <p align="left" style="font-family: 'Noto Sans TC';font-size:3vmin">
+                                    <span style="color:#0071E3">來自台灣各地一流的教師及學生所組成的團隊。</span><br>
+                                    <span style="color:black">我們專注在研究、課程編排、和解決問題</span>
+                                </p>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="font-family: 'Noto Sans TC';color:black;font-size:3vmin">姓名</th>
+                                            <th scope="col" style="font-family: 'Noto Sans TC';color:black;font-size:3vmin">職位</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for member in members %}
+                                        <tr>
+                                            <td style="font-size:3vmin">{{ member.Name }}</td>
+                                            <td style="font-size:3vmin">{{ member.Title }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                        <tr><td style="font-size:3vmin">曾裕翔</td><td style="font-size:3vmin">助理</td></tr>
+                                        <tr><td style="font-size:3vmin">洪靖玟</td><td style="font-size:3vmin">助理</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% comment %} <div class="row">
+                            {% for member in members %}
+                            <div class="col-4 col-12-narrower" style="margin-top:10px;">
+                                <div class="card" style="width:400px;height:200px">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{ member.Name }}</h4>
+                                        <p class="card-text">
+                                            職稱:{{ member.Title }}</br>
+                                            專長:{{ member.Expertise }}</br>
+                                            學歷:{{ member.Education }}</br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor%}
+                        </div> {% endcomment %}
+                </div>
+                <br>
+                {% comment %} ------------------------------ member {% endcomment %}
+                {% comment %} -----------------------------有按鈕card {% endcomment %}
+                
+                {% comment %} <div data-aos="fade-up" data-aos-anchor-placement="top-center">
+                    <div class="row">
+                        {% for article in articles %}
+                        <div class="col-6 col-12-narrower">
+                            <section class="box special">
+                                <span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+                                <h3 >{{ article.Chi_title }}</h3>
+                                <p style='text-overflow:ellipsis;overflow:hidden;white-space:nowrap'>{{ article.Content }}</p>
+                                <ul class="actions special">
+                                    <li><a href="#" class="button alt">觀看更多</a></li>
+                                </ul>
+                            </section>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div> {% endcomment %}
+                {% comment %} ----------------------- {% endcomment %}
+            </section>
+
+        <!-- CTA -->
+            <section id="cta" style="background-color:#DCDCDC">
+
+                <h2 style="font-family: 'Noto Sans TC', sans-serif;color:black">您喜歡這個網站嗎</h2>
+                <p>喜歡的話分享此網站，讓更多人知道關於我們</p>
+
+                    <div class="row ">
+                        <div class="col-12">
+                        <button class="btn_share"><strong>Share</strong></button>
+                        </div>
+                    </div>
+                
+
+            </section>
+
+        <!-- Footer -->
+        {% include "footer.html"%}
+
+    </div>
+    {% comment %} <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script> {% endcomment %}
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'js/browser.min.js' %}"></script>
+    <script src="{% static 'js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'js/util.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+{% endblock %}

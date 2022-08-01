@@ -1,0 +1,12 @@
+asgiref==3.5.2
+certifi==2022.6.15
+Django==4.0.6
+docx==0.2.4
+jieba==0.42.1
+lxml==4.9.1
+Pillow==9.2.0
+PyDocX==0.9.10
+python-docx==0.8.11
+sqlparse==0.4.2
+tzdata==2022.1
+whitenoise==6.2.0
