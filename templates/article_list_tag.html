@@ -108,13 +108,13 @@
                                     {% for article in articles %}
                                     <div class="card">
                                         <div class="card-body">
-                                            <h3 class="card-title" style="font-family: 'Noto Sans TC'">{{ article.Chi_title }}</h3>
-                                            <h3 class="card-title" style="font-family: 'Noto Sans TC'">{{ article.Eng_title }}</h3>
+                                            <h3 class="card-title" style="font-family: 'Noto Sans TC'">{{ article.title }}</h3>
+                                            <h3 class="card-title" style="font-family: 'Noto Sans TC'">{{ article.etitle }}{{article.jtitle}}</h3>
                                             <p class="card-text" style='text-overflow:ellipsis;overflow:hidden;white-space:nowrap'>
-                                                {{ article.Content }}
+                                                {{ article.content }}
                                             </p>
                                             
-                                            <a href="/article_read/0/{{ article.pk }}" class="btn btn-primary">點我觀看</a>
+                                            <a href="/article_read/0/{{ article.id }}/" class="btn btn-primary">點我觀看</a>
                                         </div>
                                     </div>
                                     <br>

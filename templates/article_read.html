@@ -11,18 +11,22 @@
         {% include "header_mod2.html" %}
         <section id="main" class="container">
             <header>
-                <h2>{{ article.Chi_title }}</h2>
-                <h2>{{ article.Eng_title }}</h2>
-                <p>Edit:{{ article.Editor }}</p>
+                <h2>{{ article.title }}</h2>
+                {% if article.etitle %}
+                    <h2>{{ article.etitle }}</h2>
+                {% endif %}
+                {% if article.jtitle %}
+                    <h2>{{ article.jtitle }}</h2>
+                {% endif %}
+                
             </header>
-            <div>
-                <span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-                {%for i in article_format%}
-                <span style="letter-spacing:1vmin">
-                    {{ i }}
-                </span>
-                <br>
-                {% endfor %}
+            <div class="card">
+                <div class="card-body">
+                    {{ article.content | linebreaksbr}}
+                </div>
+                <div class="card-footer">
+                    Edit:{{ article.editor }}
+                </div>
             </div>
         </section>
     </div>

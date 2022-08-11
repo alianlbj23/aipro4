@@ -9,6 +9,24 @@ class Member(models.Model):
     def __str__(self):
         return self.Name
 
+class PostCat(models.Model):
+    no = models.PositiveSmallIntegerField(default=0)
+    name = models.CharField(max_length=20)
+    def __str__(self):
+        return self.name
+    
+class Post(models.Model):
+    category = models.ForeignKey(PostCat, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200, verbose_name="中文標題")
+    etitle = models.CharField(max_length=200, verbose_name="英文標題", default="", null=True, blank=True)
+    jtitle = models.CharField(max_length=200, verbose_name="日文標題", default="", null=True, blank=True)
+    editor = models.CharField(max_length=200, verbose_name="編輯")
+    content = models.TextField(verbose_name="內容")
+    url = models.CharField(max_length=200, verbose_name="來源網址")
+    def __str__(self):
+        return self.title
+
+
 class Article(models.Model):
     Chi_title = models.CharField(max_length=500) 
     Eng_title = models.CharField(max_length=500)

@@ -24,7 +24,7 @@ urlpatterns = [
     path('', views.home),
     path('article_list/<int:mod>/', views.article_list),
     path('article_list_tag/<str:tag>/', views.article_list_tag),
-    path('article_read/<int:mod>/<int:pk>/', views.article_read),
+    path('article_read/<int:mod>/<int:id>/', views.article_read),
     
 ]
 if settings.DEBUG: #在debug模式啟動時
