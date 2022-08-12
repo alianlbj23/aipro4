@@ -7,6 +7,7 @@ import os
 import sys
 sys.path.append('aiproject')
 import tool
+from markdown import markdown
 
 
 def home(request):
@@ -116,4 +117,6 @@ from django.utils.safestring import mark_safe
 
 def article_read(request, mod, id):
     article = Post.objects.get(id=id)
+    mcontent = markdown(article.content, extensions=['markdown.extensions.extra', 
+                                                     'markdown.extensions.codehilite',])
     return render(request, "article_read.html", locals())
