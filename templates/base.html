@@ -1,5 +1,5 @@
-<!doctype html>
 {% load static %}
+<!doctype html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content = "text/html">
@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css_font/all.css' %}">
     <link rel="stylesheet" href="{% static 'css/images/overlay.png' %}">
-    <link rel="stylesheet" href="{% static 'webfonts' %}">
-    <link rel="stylesheet" href="{% static 'webfonts_font' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'webfonts' %}">
+    <link rel="stylesheet" href="{% static 'webfonts_font' %}"> {% endcomment %}
 
     <title>{% block title %} {% endblock %}</title>
 </head>
