@@ -117,6 +117,12 @@ from django.utils.safestring import mark_safe
 
 def article_read(request, mod, id):
     article = Post.objects.get(id=id)
+    try:
+        pcat = PostCat.objects.get(no=mod)
+    except:
+        pcat = PostCat.objects.get(no=0)
+    related_posts = Post.objects.filter(category=pcat)
+    categories = PostCat.objects.all()
     mcontent = markdown(article.content, extensions=['markdown.extensions.extra', 
                                                      'markdown.extensions.codehilite',])
     return render(request, "article_read.html", locals())

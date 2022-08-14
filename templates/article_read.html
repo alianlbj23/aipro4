@@ -8,27 +8,61 @@
 
 <body class="is-preload">
     <div id="page-wrapper">
-        {% include "header_mod2.html" %}
-        <section id="main" class="container">
-            <header>
-                <h2>{{ article.title }}</h2>
-                {% if article.etitle %}
-                    <h2>{{ article.etitle }}</h2>
-                {% endif %}
-                {% if article.jtitle %}
-                    <h2>{{ article.jtitle }}</h2>
-                {% endif %}
-                
-            </header>
-            <div class="card">
-                <div class="card-body">
-                    {{ mcontent | safe }}
-                </div>
-                <div class="card-footer">
-                    Edit:{{ article.editor }}
-                </div>
+        {% include "header.html" %}
+        <div class="row">
+            <div class="col-9">
+                <section id="main" class="container">
+                    <header>
+                        <h2>{{ article.title }}</h2>
+                        {% if article.etitle %}
+                            <h2>{{ article.etitle }}</h2>
+                        {% endif %}
+                        {% if article.jtitle %}
+                            <h2>{{ article.jtitle }}</h2>
+                        {% endif %}
+                        <hr>
+                        <h4>
+                            {{ article.editor }}
+                        </h4>
+                        <hr>
+                    </header>
+                    <div class="card">
+                        <div class="card-body">
+                            {{ mcontent | safe }}
+                        </div>
+                        <div class="card-footer">
+                            Comments:{{ article.comment }}
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
+            <div class="col-3">
+                <header>
+                    <br><br>
+                    <hr>
+                    <center>
+                        <h3>文章分類</h3>
+                    </center>
+                    <hr>
+                    <ul>
+                        {% for c in categories %}
+                        <li><a href="/article_list/{{c.no}}/">{{ c.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <hr>
+                    <center>
+                        <h3>相關文章</h3>
+                    </center>
+                    <hr>
+                    您可能會感興趣的內容：<br><br>
+                    <ul>
+                        {% for p in related_posts%}
+                        <li><a href="/article_read/{{ mod }}/{{ p.id }}/">{{ p.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </header>
+            </div>
+        </div>
     </div>
 </body>
 {% endblock %}

@@ -83,7 +83,7 @@
 
 <body class="landing is-preload">
     
-    {% include "header_mod2.html" %}
+    {% include "header.html" %}
 
     <div id="page-wrapper">
 
@@ -120,6 +120,9 @@
                                             </p>
                                             
                                             <a href="/article_read/{{ mod }}/{{ article.id }}/" class="btn btn-primary">點我觀看</a>
+                                        </div>
+                                        <div class="card-footer">
+                                            {{ article.editor }}
                                         </div>
                                     </div>
                                     <br>

@@ -20,9 +20,11 @@ class Post(models.Model):
     title = models.CharField(max_length=200, verbose_name="中文標題")
     etitle = models.CharField(max_length=200, verbose_name="英文標題", default="", null=True, blank=True)
     jtitle = models.CharField(max_length=200, verbose_name="日文標題", default="", null=True, blank=True)
-    editor = models.CharField(max_length=200, verbose_name="編輯")
+    editor = models.CharField(max_length=200, verbose_name="責任編輯")
+    comment = models.CharField(max_length=200, verbose_name="編輯事項", default="N/A")
+    abstract = models.CharField(max_length=200, verbose_name="摘要", default="N/A")
     content = models.TextField(verbose_name="內容")
-    url = models.CharField(max_length=200, verbose_name="來源網址")
+    url = models.CharField(max_length=200, verbose_name="來源網址", default="N/A")
     def __str__(self):
         return self.title
 

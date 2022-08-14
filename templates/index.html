@@ -33,7 +33,7 @@
                         
                         <h3 style="font-family: 'Noto Sans TC', sans-serif;color:gray;">數位人文是一門新興學科，探討數位科技和文化間的交流。<br>學生將學習使用數位科技探索文化、語言或歷史等傳統人文議題，以及分析和理解人文科學相關數據資料...</h4>
                     </header>
-                    <span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+                    <span class="image featured"><img src="{% static "images/pic01.jpg" %}" alt="" /></span>
                 </section>
             </div>
             </div>
@@ -162,7 +162,7 @@
             </section>
 
         <!-- CTA -->
-            <section id="cta" style="background-color:#DCDCDC">
+            {% comment %} <section id="cta" style="background-color:#DCDCDC">
 
                 <h2 style="font-family: 'Noto Sans TC', sans-serif;color:black">您喜歡這個網站嗎</h2>
                 <p>喜歡的話分享此網站，讓更多人知道關於我們</p>
@@ -174,7 +174,7 @@
                     </div>
                 
 
-            </section>
+            </section> {% endcomment %}
 
         <!-- Footer -->
         {% include "footer.html"%}
