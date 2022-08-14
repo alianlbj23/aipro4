@@ -25,8 +25,9 @@ def article_list_tag(request, tag):
     tag_list.append(tag)
     tag_list = set(tag_list)
     slide_pk = slide_article_pk(tag_list)
-    articles = Article.objects.filter(pk__in=slide_pk[0])
-    ai_articles = AI_Article.objects.filter(pk__in=slide_pk[1])
+    #articles = Article.objects.filter(pk__in=slide_pk[0])
+    #ai_articles = AI_Article.objects.filter(pk__in=slide_pk[1])
+    articles = Post.objects.filter(content__icontains=tag)
     return render(request, 'article_list_tag.html', locals())
     
 from pydocx import PyDocX

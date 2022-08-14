@@ -83,7 +83,7 @@
 
 <body class="landing is-preload">
     
-    {% include "header_mod2.html" %}
+    {% include "header.html" %}
 
     <div id="page-wrapper">
 
@@ -96,7 +96,7 @@
             <div class="box-area" >
                 
                 <div class="banner-area" >
-                    <h2 style="text-align:center;font-family: 'Noto Sans TC'">文章列表</h2>
+                    <h2 style="text-align:center;font-family: 'Noto Sans TC'">文章列表：{{tag}}</h2>
                 </div>
                 
                 <div class="content-area">
@@ -108,13 +108,23 @@
                                     {% for article in articles %}
                                     <div class="card">
                                         <div class="card-body">
-                                            <h3 class="card-title" style="font-family: 'Noto Sans TC'">{{ article.title }}</h3>
-                                            <h3 class="card-title" style="font-family: 'Noto Sans TC'">{{ article.etitle }}{{article.jtitle}}</h3>
-                                            <p class="card-text" style='text-overflow:ellipsis;overflow:hidden;white-space:nowrap'>
-                                                {{ article.content }}
+                                            <h3 class="card-title alert-info" style="font-family: 'Noto Sans TC'">{{ article.title }}</h3>
+                                            {% if article.etitle %}
+                                            <h4 class="card-title" style="font-family: 'Noto Sans TC';font-weight:200%;">{{ article.etitle }}</h4>
+                                            {% endif %}
+                                            {% if article.jtitle %}
+                                            <h4 class="card-title" style="font-family: 'Noto Sans TC';font-weight:200%;">{{ article.jtitle }}</h4>
+                                            {% endif %}
+                                            <h4>Keywords:</h4>
+                                            <h4>Category:{{ postcat.name }}</h4>
+                                            <p class="card-text alert-warning">
+                                                {{ article.abstract }}
                                             </p>
                                             
-                                            <a href="/article_read/0/{{ article.id }}/" class="btn btn-primary">點我觀看</a>
+                                            <a href="/article_read/{{ article.category.no }}/{{ article.id }}/" class="btn btn-primary">點我觀看</a>
+                                        </div>
+                                        <div class="card-footer">
+                                            {{ article.editor }}
                                         </div>
                                     </div>
                                     <br>
