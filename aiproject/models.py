@@ -25,6 +25,7 @@ class Post(models.Model):
     abstract = models.CharField(max_length=200, verbose_name="摘要", default="N/A")
     content = models.TextField(verbose_name="內容")
     url = models.CharField(max_length=200, verbose_name="來源網址", default="N/A")
+    keyword = models.CharField(max_length=200, verbose_name="關鍵字", default="", null=True, blank=True)
     def __str__(self):
         return self.title
 

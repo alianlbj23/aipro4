@@ -10,7 +10,7 @@ class PostCatAdmin(admin.ModelAdmin):
 admin.site.register(PostCat, PostCatAdmin)
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('category', 'title', 'etitle', 'jtitle', 'comment', 'abstract', 'editor', 'content', 'url')
+    list_display = ('category', 'title', 'etitle', 'jtitle', 'comment', 'abstract', 'editor', 'content', 'url', 'keyword')
 admin.site.register(Post, PostAdmin)
 
 class MemberAdmin(admin.ModelAdmin):
