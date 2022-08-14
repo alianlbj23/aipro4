@@ -18,6 +18,7 @@ def home(request):
 def article_list(request,mod):
     postcat = PostCat.objects.get(no=mod)
     articles = Post.objects.filter(category = postcat)
+    keywords = Keyword.objects.all()
     return render(request, 'article_list.html', locals())
 
 def article_list_tag(request, tag):
@@ -28,6 +29,7 @@ def article_list_tag(request, tag):
     #articles = Article.objects.filter(pk__in=slide_pk[0])
     #ai_articles = AI_Article.objects.filter(pk__in=slide_pk[1])
     articles = Post.objects.filter(content__icontains=tag)
+    keywords = Keyword.objects.all()
     return render(request, 'article_list_tag.html', locals())
     
 from pydocx import PyDocX

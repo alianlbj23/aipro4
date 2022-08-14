@@ -28,6 +28,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class Keyword(models.Model):
+    name = models.CharField(max_length=20, verbose_name="名稱")
+    def __str__(self):
+        return self.name
 
 class Article(models.Model):
     Chi_title = models.CharField(max_length=500) 

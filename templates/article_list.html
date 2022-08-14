@@ -102,7 +102,7 @@
                 <div class="content-area">
                     <div class="wrapper">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-10">
                                 <section class="ar_list">
                                     <br>
                                     {% for article in articles %}
@@ -130,6 +130,20 @@
                                     <br>
                                     {% endfor %}
                                 </section>
+                            </div>
+                            <div class="col-2">
+                                <br><br>
+                                <h4>關鍵字查詢：</h4>
+                                    <script>
+                                        function kwchange(a) {
+                                            window.location = "/article_list_tag/" + a.value + "/";
+                                        }
+                                    </script>
+                                    <select onchange="kwchange(this)">
+                                        {% for k in keywords %}
+                                            <option value={{ k.name }}>{{ k.name }}</option>
+                                        {% endfor %}
+                                    </select>
                             </div>
                         </div>
                     </div>

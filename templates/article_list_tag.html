@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} 首頁{% endblock %}
+{% block title %}關鍵字：{{tag}}{% endblock %}
 {% block content %} 
 <style>
     
@@ -96,13 +96,13 @@
             <div class="box-area" >
                 
                 <div class="banner-area" >
-                    <h2 style="text-align:center;font-family: 'Noto Sans TC'">文章列表：{{tag}}</h2>
+                    <h2 style="text-align:center;font-family: 'Noto Sans TC'">關鍵字搜尋：{{tag}}</h2>
                 </div>
                 
                 <div class="content-area">
                     <div class="wrapper">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-10">
                                 <section class="ar_list">
                                     <br>
                                     {% for article in articles %}
@@ -144,6 +144,21 @@
                                     <br>
                                     {% endfor %}
                                 </section>
+                            </div>
+                            <div class="col-2">
+                                <br><br>
+                                <h4>關鍵字查詢：</h4>
+                                    <script>
+                                        function kwchange(a) {
+                                            window.location = "/article_list_tag/" + a.value + "/";
+                                        }
+                                    </script>
+                                    <select onchange="kwchange(this)">
+                                        <option value={{ tag }}>{{ tag }}</option>
+                                        {% for k in keywords %}
+                                            <option value={{ k.name }}>{{ k.name }}</option>
+                                        {% endfor %}
+                                    </select>
                             </div>
                         </div>
                     </div>

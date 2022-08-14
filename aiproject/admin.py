@@ -1,6 +1,9 @@
 from django.contrib import admin
 from aiproject.models import *
 
+class KeywordAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+admin.site.register(Keyword, KeywordAdmin)
 
 class PostCatAdmin(admin.ModelAdmin):
     list_display = ('no', 'name')
