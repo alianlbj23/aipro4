@@ -22,16 +22,13 @@
             </header>
             <div class="card">
                 <div class="card-body">
-                    {{ article.content | linebreaksbr}}
+                    {{ mcontent | safe }}
                 </div>
                 <div class="card-footer">
                     Edit:{{ article.editor }}
                 </div>
             </div>
         </section>
-    </div>
-    <div class="card">
-        {{ mcontent | safe }}
     </div>
 </body>
 {% endblock %}
