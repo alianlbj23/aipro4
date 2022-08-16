@@ -15,6 +15,9 @@ def home(request):
     articles = Article.objects.all()
     return render(request, 'index.html', locals())
 
+def mdtest(request):
+    return render(request, 'mdtest.html', locals())
+
 def article_list(request,mod):
     postcat = PostCat.objects.get(no=mod)
     articles = Post.objects.filter(category = postcat)
@@ -127,5 +130,6 @@ def article_read(request, mod, id):
     related_posts = Post.objects.filter(category=pcat)
     categories = PostCat.objects.all()
     mcontent = markdown(article.content, extensions=['markdown.extensions.extra', 
-                                                     'markdown.extensions.codehilite',])
+                                                     'markdown.extensions.codehilite',
+                                                     'tables'])
     return render(request, "article_read.html", locals())

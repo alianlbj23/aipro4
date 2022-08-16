@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% load markdown_deux_tags %}
+{% block title %}瀏覽文章{% endblock %}
+{% block content %} 
+<div class="container" style="background-color:#aaa;">
+{% markdown %}
+## Title
+***
+1. item 1
+2. item 2
+***
+- item 3
+- item 4
+### Table sample 
+| thead 1 | thrad 2 | thread 3 |
+|---------|---------|----------|
+| td      | td      | td       |
+
+[NKUST](https://www.nkust.edu.tw)
+
+![CAR](http://hophd.com/wp-content/uploads/2019/08/2018-10-27-13.11.08.jpg)
+{% endmarkdown %}
+</div>
+{% endblock %}

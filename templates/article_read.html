@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}文章觀看{% endblock %}
+{% load markdown_deux_tags %}
+{% block title %}瀏覽文章{% endblock %}
 {% block content %} 
 <style>
 
@@ -15,10 +16,10 @@
                     <header>
                         <h2>{{ article.title }}</h2>
                         {% if article.etitle %}
-                            <h2>{{ article.etitle }}</h2>
+                            <h3>{{ article.etitle }}</h3>
                         {% endif %}
                         {% if article.jtitle %}
-                            <h2>{{ article.jtitle }}</h2>
+                            <h3>{{ article.jtitle }}</h3>
                         {% endif %}
                         <hr>
                         <h4>本文由{{ article.editor }}</h4>
@@ -63,5 +64,11 @@
             </div>
         </div>
     </div>
+{% comment %} {% markdown %}        
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+{% endmarkdown %} {% endcomment %}
 </body>
 {% endblock %}
