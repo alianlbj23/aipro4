@@ -8,8 +8,9 @@
 </style>
 
 <body class="is-preload">
+    {% include "header.html" %}
     <div id="page-wrapper">
-        {% include "header.html" %}
+        
         <div class="row">
             <div class="col-9">
                 <section id="main" class="container">
@@ -64,11 +65,17 @@
             </div>
         </div>
     </div>
-{% comment %} {% markdown %}        
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
-{% endmarkdown %} {% endcomment %}
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'js/browser.min.js' %}"></script>
+    <script src="{% static 'js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'js/util.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 {% endblock %}
