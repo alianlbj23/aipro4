@@ -1,8 +1,13 @@
 from django.shortcuts import render
+from mysite import settings
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from aiproject.models import Member
 from .models import *
+from django.core.files.storage import FileSystemStorage
+from .forms import UploadFileForm
+
 import os
 import sys
 sys.path.append('aiproject')
@@ -18,6 +23,37 @@ def home(request):
 def mdtest(request):
     return render(request, 'mdtest.html', locals())
 
+@login_required(login_url='/admin/login/?next=/')
+def upload(request):
+    if request.method=="POST":
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            try:
+                uploaded_file = request.FILES['file']
+                fss = FileSystemStorage()
+                file = fss.save(uploaded_file.name, uploaded_file)
+                filerec = PostImage()
+                filerec.title = request.POST.get("title").strip()
+                filerec.image = fss.url(file)
+                filerec.save()
+                return redirect('/upload/')
+            except Exception as e:
+                print(e)
+    else:
+        form = UploadFileForm()
+    images = PostImage.objects.all()
+    return render(request, "upload.html", locals())
+
+def imagedel(request, id):
+    target = PostImage.objects.get(id=id)
+    target_file = str(target.image)
+    try:
+        target.delete()
+        os.remove(target_file[1:])
+    except Exception as e:
+        print(e)
+    return redirect("/upload/")
+    
 def article_list(request,mod):
     postcat = PostCat.objects.get(no=mod)
     articles = Post.objects.filter(category = postcat)

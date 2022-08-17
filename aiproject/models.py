@@ -29,6 +29,13 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class PostImage(models.Model):
+    title = models.CharField(max_length=200, verbose_name="圖片說明")
+    image = models.ImageField(blank=True, null=True,verbose_name="照片檔案")
+    add_date = models.DateField(verbose_name="新增日期",auto_now_add=True, blank=True)
+    def __str__(self):
+        return self.title 
+    
 class Keyword(models.Model):
     name = models.CharField(max_length=20, verbose_name="名稱")
     def __str__(self):

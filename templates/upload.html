@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}檔案上傳{% endblock %}
+{% block content %} 
+
+<body class="is-preload">
+    <div id="page-wrapper" class="container">
+        {% include "header.html" %}
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <form action="/upload/" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_table }}
+                        <tr><td colspan=2><input type=submit value="上傳"></td></tr>
+                    </form>
+                    </table>
+                    {% if images %}
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>已上傳照片列表</h4>
+                        </td>
+                        <div class="card-body">
+                        <table class="table table-sm table-striped">
+                            <tr><td>編號</td><td>名稱</td><td>檔案路徑</td><td>新增日期</td><td>管理</td></tr>
+                        {% for image in images %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td><a href="{{ image.image }}">{{ image.title }}</a></td>
+                                <td>{{ request.build_absolute_uri }}
+                                    {{ image.image }}</td>
+                                <td>{{ image.add_date }}</td>
+                                <td>
+                                    <a class="btn btn-sm btn-danger" href="/imagedel/{{image.id}}/">刪除</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </table>
+                        </div>
+                    </div>
+                    {% else %}
+                        <h3>目前沒有相關的照片檔案</h2>
+                    {% endif %}
+                    
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+</body>
+
+{% endblock %}

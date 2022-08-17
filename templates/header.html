@@ -35,6 +35,9 @@
                     <li><a href="/admin/" class="text">管理後台</a></li>
                 </ul>
             </li>
+            {% if request.user.is_authenticated %}
+            <li><a href="/upload/" class="text">Upload</a></li>
+            {% endif %}
             {% comment %} <li><a href="#" class="button">Sign Up</a></li> {% endcomment %}
         </ul>
     </nav>
