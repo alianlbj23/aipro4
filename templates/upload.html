@@ -8,7 +8,9 @@
         {% include "header.html" %}
         <div class="row">
             <div class="col">
-                <table class="table">
+                <br>
+                <h3 class="alert-primary">圖片檔案管理區</h3>
+                <table class="table table-info">
                     <form action="/upload/" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form.as_table }}
