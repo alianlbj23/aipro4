@@ -42,6 +42,7 @@ def upload(request):
     else:
         form = UploadFileForm()
     images = PostImage.objects.all()
+    domain = request.build_absolute_uri('/')[:-1]
     return render(request, "upload.html", locals())
 
 def imagedel(request, id):

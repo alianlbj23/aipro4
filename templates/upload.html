@@ -30,7 +30,7 @@
                             <tr>
                                 <td>{{ forloop.counter }}</td>
                                 <td><a href="{{ image.image }}">{{ image.title }}</a></td>
-                                <td>{{ request.get_host }}{{ image.image }}</td>
+                                <td>{{ domain }}{{ image.image }}</td>
                                 <td>{{ image.add_date }}</td>
                                 <td>
                                     <a class="btn btn-sm btn-danger" href="/imagedel/{{image.id}}/">刪除</a>
