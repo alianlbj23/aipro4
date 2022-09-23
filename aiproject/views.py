@@ -166,6 +166,9 @@ def article_read(request, mod, id):
         pcat = PostCat.objects.get(no=0)
     related_posts = Post.objects.filter(category=pcat)
     categories = PostCat.objects.all()
+    mcomment = markdown(article.comment, extensions=['markdown.extensions.extra', 
+                                                     'markdown.extensions.codehilite',
+                                                     'tables'])
     mcontent = markdown(article.content, extensions=['markdown.extensions.extra', 
                                                      'markdown.extensions.codehilite',
                                                      'tables'])
