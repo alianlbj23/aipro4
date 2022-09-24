@@ -11,7 +11,7 @@ urlpatterns = [
     path('upload/', views.upload), #上傳文章用照片
     path('imagedel/<int:id>/', views.imagedel), #刪除上傳的檔案記錄資料
     path('article_list/<int:mod>/', views.article_list),
-    path('article_list_tag/<str:tag>/', views.article_list_tag),
+    #path('article_list_tag/<str:tag>/', views.article_list_tag),
     path('article_read/<int:mod>/<int:id>/', views.article_read),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

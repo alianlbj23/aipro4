@@ -27,7 +27,7 @@ if str(BASE_DIR)[0] == "/":
     DEBUG = False
 else:
     DEBUG = True
-
+DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aiproject.apps.AiprojectConfig',
-    'markdown_deux',
+    #'markdown_deux',
 ]
 
 MIDDLEWARE = [

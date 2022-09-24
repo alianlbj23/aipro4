@@ -11,7 +11,7 @@ from .forms import UploadFileForm
 import os
 import sys
 sys.path.append('aiproject')
-import tool
+#import tool
 from markdown import markdown
 
 
@@ -60,7 +60,7 @@ def article_list(request,mod):
     articles = Post.objects.filter(category = postcat)
     keywords = Keyword.objects.all()
     return render(request, 'article_list.html', locals())
-
+'''
 def article_list_tag(request, tag):
     tag_list = list()
     tag_list.append(tag)
@@ -82,7 +82,6 @@ def dataOutput(information,range1, range2):
     target = target.strip()
     Updateinformation = information[right:]
     return target,Updateinformation
-
 
 def slide_article_pk(target_set):
     target_set = set(target_set)
@@ -157,7 +156,7 @@ from django.utils.safestring import mark_safe
 #     ai_articles = AI_Article.objects.filter(pk__in=slide_pk[1])
 #     dh_articles = DH_Article.objects.filter(pk__in=slide_pk[2])
 #     return render(request, 'tool.html', locals())
-
+'''
 def article_read(request, mod, id):
     article = Post.objects.get(id=id)
     try:
