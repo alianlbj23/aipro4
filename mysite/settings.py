@@ -90,8 +90,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'aipro4db',
-        'USER':'aipro4user',
-        'PASSWORD':'nkust@0000!',
+        #'USER':'aipro4user',
+        #'PASSWORD':'nkust@0000!',
+        'USER':'root',
+        'PASSWORD':'@123aBc456@',
         'HOST':'163.18.44.53',
         'PORT':'3307',
     }
