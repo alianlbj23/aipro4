@@ -96,7 +96,7 @@
                 {% comment %} ----------------------------member card {% endcomment %}
                 <div data-aos="fade-left" data-aos-anchor-placement="top-center">
                     
-                        <h1 class="display-4" style="font-family: 'Noto Sans TC', sans-serif;color:#0071E3">專業教師開發團隊</h2>
+                        <h1 id="member" class="display-4" style="font-family: 'Noto Sans TC', sans-serif;color:#0071E3">專業教師開發團隊</h2>
                             <div style="background-color:white;border-radius:5vmin;padding:2vmin">
                                 <table class="table">
                                     <thead>
@@ -111,11 +111,11 @@
                                     <tbody>
                                         {% for member in members %}
                                         <tr>
-					    <td style="font-size:3vmin">{{ forloop.counter }}</td>
-					    <td style="font-size:3vmin">N/A</td>
+                                            <td style="font-size:3vmin">{{ forloop.counter }}</td>
+                                            <td style="font-size:3vmin">{{ member.Duty }}</td>
                                             <td style="font-size:3vmin">{{ member.Name }}</td>
                                             <td style="font-size:3vmin">{{ member.Title }}</td>
-					    <td style="font-size:3vmin">N/A</td>
+                                            <td style="font-size:3vmin">{{ member.Expertise }}</td>
                                         </tr>
                                         {% endfor %}
                                     </tbody>

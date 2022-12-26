@@ -3,6 +3,7 @@ from django.db.models.base import Model
 
 class Member(models.Model):
     Name = models.CharField(max_length=50) 
+    Duty = models.CharField(max_length=50, default="共授教師")
     Title = models.CharField(max_length=50) 
     Expertise = models.CharField(max_length=50) 
     Education = models.CharField(max_length=50) 

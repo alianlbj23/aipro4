@@ -14,7 +14,7 @@ class PostAdmin(admin.ModelAdmin):
 admin.site.register(Post, PostAdmin)
 
 class MemberAdmin(admin.ModelAdmin):
-    list_display = ['Name', 'Title', 'Expertise', 'Education']
+    list_display = ['Name', 'Title', 'Duty', 'Expertise', 'Education']
 admin.site.register(Member, MemberAdmin)
 
 class ArticleAdmin(admin.ModelAdmin):
