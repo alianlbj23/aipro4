@@ -15,7 +15,7 @@
         <!-- Banner -->
             <section id="banner">
                 <h1 class="display-1" style="font-family: 'Noto Sans TC';color:white;font-weight:bold;">數位人文與AI增能學術研究網</h1>
-                <h1 class="display-6" style="font-family: 'Noto Sans TC';color:#E0E0E0">由國立高雄科技大學應用英語系呈現</h1>
+                <h1 class="display-6" style="font-family: 'Noto Sans TC';color:#E0E0E0">國立高雄科技大學應用英語系</h1>
                 <ul class="actions special">
                     {% comment %} <li><a href="#" class="button primary">Sign Up</a></li> {% endcomment %}
                     <li><a href="#section1" class="button nav-link">關於我們...</a></li>
@@ -31,7 +31,7 @@
                     <header class="major">
                         <h1 class="display-3" style="font-family: 'Noto Sans TC', sans-serif;color:black">對於AI增能學術</h1>
                         
-                        <h3 style="font-family: 'Noto Sans TC', sans-serif;color:gray;">數位人文是一門新興學科，探討數位科技和文化間的交流。<br>學生將學習使用數位科技探索文化、語言或歷史等傳統人文議題，以及分析和理解人文科學相關數據資料...</h4>
+			<h3 style="font-family: 'Noto Sans TC', sans-serif;color:gray;">推廣歐美日DH數位人文工具與AI科技工具知識之應用，<br>提昇國內外語數位人文與研究之風氣</h4>
                     </header>
                     <span class="image featured"><img src="{% static "images/pic01.jpg" %}" alt="" /></span>
                 </section>
@@ -98,26 +98,26 @@
                     
                         <h1 class="display-4" style="font-family: 'Noto Sans TC', sans-serif;color:#0071E3">專業教師開發團隊</h2>
                             <div style="background-color:white;border-radius:5vmin;padding:2vmin">
-                                <p align="left" style="font-family: 'Noto Sans TC';font-size:3vmin">
-                                    <span style="color:#0071E3">來自台灣各地一流的教師及學生所組成的團隊。</span><br>
-                                    <span style="color:black">我們專注在研究、課程編排、和解決問題</span>
-                                </p>
                                 <table class="table">
                                     <thead>
                                         <tr>
+					<th scope="col" style="font-family: 'Noto Sans TC';color:black;font-size:3vmin">編號</th>
+					<th scope="col" style="font-family: 'Noto Sans TC';color:black;font-size:3vmin">擔任職務</th>
                                             <th scope="col" style="font-family: 'Noto Sans TC';color:black;font-size:3vmin">姓名</th>
-                                            <th scope="col" style="font-family: 'Noto Sans TC';color:black;font-size:3vmin">職位</th>
+                                            <th scope="col" style="font-family: 'Noto Sans TC';color:black;font-size:3vmin">任職單位/職稱</th>
+					    <th scope="col" style="font-family: 'Noto Sans TC';color:black;font-size:3vmin">專長領域</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {% for member in members %}
                                         <tr>
+					    <td style="font-size:3vmin">{{ forloop.counter }}</td>
+					    <td style="font-size:3vmin">N/A</td>
                                             <td style="font-size:3vmin">{{ member.Name }}</td>
                                             <td style="font-size:3vmin">{{ member.Title }}</td>
+					    <td style="font-size:3vmin">N/A</td>
                                         </tr>
                                         {% endfor %}
-                                        <tr><td style="font-size:3vmin">曾裕翔</td><td style="font-size:3vmin">助理</td></tr>
-                                        <tr><td style="font-size:3vmin">洪靖玟</td><td style="font-size:3vmin">助理</td></tr>
                                     </tbody>
                                 </table>
                             </div>
